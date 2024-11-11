@@ -29,8 +29,7 @@ Gastric cancer is a leading cause of cancer-related deaths worldwide, and early 
     ├── svm_model.py                 # Code for SVM model with ResNet50 feature extraction
     ├── rf_model.py                  # Code for Random Forest with hand-crafted features
     └── utils.py                     # Helper functions (data loading, feature extraction, etc.)
-
-
+```
 
 
 ## Dataset
