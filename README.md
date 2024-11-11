@@ -31,7 +31,7 @@ Gastric cancer is a leading cause of cancer-related deaths worldwide, and early 
     └── utils.py                     # Helper functions (data loading, feature extraction, etc.)
 
 
----
+
 
 ## Dataset
 
@@ -43,7 +43,7 @@ This project uses the **Kvasir dataset** for training and evaluation. The datase
 - **Structure**:
   - Place images in subdirectories based on class labels (e.g., `data/normal/` and `data/cancerous/`).
 
----
+
 
 ## Models
 
@@ -67,7 +67,6 @@ This project implements three models with different machine learning techniques:
 - **Purpose**: An interpretable approach that combines hand-crafted features with a traditional ML algorithm.
 - **Code**: `src/rf_model.py`
 
----
 
 ## Installation
 
