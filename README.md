@@ -11,8 +11,6 @@ Gastric cancer is a leading cause of cancer-related deaths worldwide, and early 
 - [Models](#models)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Evaluation](#evaluation)
-- [Contributing](#contributing)
 - [References](#references)
 
 ---
