@@ -95,10 +95,9 @@ The VGG16 Transfer Learning model utilizes a pre-trained VGG16 model, fine-tuned
     ```bash
     git clone https://github.com/yourusername/Gastric_cancer_classification-Model.git
     ```
-2. Navigate into the project directory and install dependencies:
+2. Navigate into the project directory:
     ```bash
     cd Gastric_cancer_classification-Model
-    pip install -r requirements.txt
     ```
 
 ### Training the Models
@@ -106,7 +105,7 @@ The VGG16 Transfer Learning model utilizes a pre-trained VGG16 model, fine-tuned
 2. The data should be preprocessed and split into training and validation sets before training.
 
 ### Evaluation
-Each model is evaluated based on accuracy, precision, recall, F1-score, and confusion matrix. The evaluation graphs and confusion matrices above provide a comparative overview of each model’s performance.
+Each model is evaluated based on accuracy, precision, and confusion matrix. The evaluation graphs and confusion matrices above provide a comparative overview of each model’s performance.
 
 ## Conclusion
 This project explores different CNN architectures and regularization techniques to enhance the early detection of gastric cancer from endoscopic images. The VGG16 transfer learning model, leveraging pre-trained features, is expected to outperform other models due to the advantages of transfer learning, especially in the medical imaging domain.
