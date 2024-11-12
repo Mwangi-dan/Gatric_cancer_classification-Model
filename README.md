@@ -67,6 +67,7 @@ The CNN with L1 regularization model incorporates L1 penalties on the weights of
 - **Purpose**: To evaluate the effect of L1 regularization on model performance.
 
 ![CNN L1 Regularization Evaluation Graph](images/cnn_l1_evaluation_graph.png)
+![CNN L1 Regularization Confusion Matrix](images/regularization_confusion_matrix.png)
 
 ### 3. CNN Model with L2 Regularization
 The CNN with L2 regularization model adds L2 penalties, which constrain the network weights by penalizing large weights. This regularization technique helps prevent overfitting and makes the model more robust.
