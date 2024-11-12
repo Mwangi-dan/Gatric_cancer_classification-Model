@@ -20,7 +20,14 @@ Gastric cancer is a leading cause of cancer-related deaths worldwide, and early 
 ## Project Structure
 
 ```plaintext
-Gastric_cancer_classification-Model/ │ ├── saved_models/ # Directory to save trained model files │ ├── cnn_model_l1_regularization.h5 # CNN model with L1 regularization │ ├── cnn_model_l2_regularization.h5 # CNN model with L2 regularization │ ├── vanilla_cnn_model.keras # Vanilla CNN model │ └── vgg16_transfer_learning.keras # VGG16 transfer learning model │ ├── Daniel_Ndungu_Summative_Assignment.pdf # Project report └── README.md # Documentation for the project
+Gastric_cancer_classification-Model/ │ 
+├── saved_models/ # Directory to save trained model files 
+│ ├── cnn_model_l1_regularization.h5 # CNN model with L1 regularization 
+│ ├── cnn_model_l2_regularization.h5 # CNN model with L2 regularization 
+│ ├── vanilla_cnn_model.keras # Vanilla CNN model 
+│ └── vgg16_transfer_learning.keras # VGG16 transfer learning model 
+├── Daniel_Ndungu_Summative_Assignment.pdf # Project report 
+└── README.md # Documentation for the project
 ```
 
 
@@ -28,11 +35,17 @@ Gastric_cancer_classification-Model/ │ ├── saved_models/ # Directory to 
 
 This project uses the **Kvasir dataset** for training and evaluation. The dataset includes various endoscopic images of the gastrointestinal tract, including images of normal and cancerous tissues.
 
+Type of images in the Kvasir Dataset:
+![Augmented sample image from Kvasir dataset](images\sample_augmented_image.png)
+
+
+
 **Note**: The Kvasir dataset should be organized in `data/` with subfolders for each class label (e.g., `normal`, `cancerous`).
 
 - **Download**: The dataset is available from [Kvasir Dataset](https://datasets.simula.no/kvasir/).
 - **Structure**:
   - Place images in subdirectories based on class labels (e.g., `data/normal/` and `data/cancerous/`).
+  
 
 
 
