@@ -36,7 +36,7 @@ Gastric_cancer_classification-Model/ │
 This project uses the **Kvasir dataset** for training and evaluation. The dataset includes various endoscopic images of the gastrointestinal tract, including images of normal and cancerous tissues.
 
 Type of images in the Kvasir Dataset:
-![Augmented sample image from Kvasir dataset](images\sample_augmented_image.png)
+![Augmented sample image from Kvasir dataset](images/sample_augmented_image.png)
 
 
 
