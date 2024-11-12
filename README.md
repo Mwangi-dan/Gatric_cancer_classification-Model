@@ -20,15 +20,7 @@ Gastric cancer is a leading cause of cancer-related deaths worldwide, and early 
 ## Project Structure
 
 ```plaintext
-├── data/                            # Directory containing endoscopic images from the Kvasir dataset
-├── models/                          # Saved model files (e.g., best_model.h5)
-├── notebooks/                       # Jupyter/Colab notebooks for training and testing models
-├── README.md                        # Project documentation
-└── src/
-    ├── cnn_model.py                 # Code for CNN-based model
-    ├── svm_model.py                 # Code for SVM model with ResNet50 feature extraction
-    ├── rf_model.py                  # Code for Random Forest with hand-crafted features
-    └── utils.py                     # Helper functions (data loading, feature extraction, etc.)
+Gastric_cancer_classification-Model/ │ ├── saved_models/ # Directory to save trained model files │ ├── cnn_model_l1_regularization.h5 # CNN model with L1 regularization │ ├── cnn_model_l2_regularization.h5 # CNN model with L2 regularization │ ├── vanilla_cnn_model.keras # Vanilla CNN model │ └── vgg16_transfer_learning.keras # VGG16 transfer learning model │ ├── Daniel_Ndungu_Summative_Assignment.pdf # Project report └── README.md # Documentation for the project
 ```
 
 
@@ -44,34 +36,69 @@ This project uses the **Kvasir dataset** for training and evaluation. The datase
 
 
 
-## Models
+## Models Overview
 
-This project implements three models with different machine learning techniques:
+### 1. Vanilla CNN Model
+The Vanilla CNN model is a simple convolutional neural network built from scratch for gastric cancer classification. This model consists of several convolutional layers, followed by max pooling, and fully connected layers. It serves as a baseline model to understand the basic performance before applying regularization or transfer learning.
 
-### 1. CNN-Based Model (ResNet50)
+- **Architecture**: Convolutional layers with ReLU activation, followed by max pooling and dense layers.
+- **Performance**: Baseline model for comparing against regularized and transfer learning models.
 
-- **Approach**: Uses transfer learning with ResNet50, a pre-trained CNN architecture, to classify endoscopic images.
-- **Purpose**: Leverages high-level image features for accurate binary classification of normal vs. cancerous tissue.
-- **Code**: `src/cnn_model.py`
+![Vanilla CNN Evaluation Graph](images/vanilla_cnn_evaluation_graph.png)
+![Vanilla CNN Confusion Matrix](images/vanilla_cnn_confusion_matrix.png)
 
-### 2. SVM Model with Pre-extracted ResNet50 Features
+### 2. CNN Model with L1 Regularization
+The CNN with L1 regularization model incorporates L1 penalties on the weights of the network, promoting sparsity in the learned weights. This can help in reducing overfitting and potentially improve generalization.
 
-- **Approach**: ResNet50 is used as a feature extractor to convert images into embeddings, which are then classified with an SVM.
-- **Purpose**: Provides a simpler ML model with CNN-derived features for faster training and better interpretability.
-- **Code**: `src/svm_model.py`
+- **Architecture**: Similar to the Vanilla CNN, but includes L1 regularization in the dense layers.
+- **Purpose**: To evaluate the effect of L1 regularization on model performance.
 
-### 3. Random Forest Model with Hand-Crafted Image Features
+![CNN L1 Regularization Evaluation Graph](images/cnn_l1_evaluation_graph.png)
 
-- **Approach**: Uses traditional image processing to extract color histograms and texture features (GLCM) from images, which are then classified using a Random Forest model.
-- **Purpose**: An interpretable approach that combines hand-crafted features with a traditional ML algorithm.
-- **Code**: `src/rf_model.py`
+### 3. CNN Model with L2 Regularization
+The CNN with L2 regularization model adds L2 penalties, which constrain the network weights by penalizing large weights. This regularization technique helps prevent overfitting and makes the model more robust.
+
+- **Architecture**: Similar to the Vanilla CNN, but includes L2 regularization in the dense layers.
+- **Purpose**: To assess the impact of L2 regularization on the model's ability to generalize to unseen data.
+
+![CNN L2 Regularization Evaluation Graph](images/cnn_l2_evaluation_graph.png)
 
 
-## Installation
+### 4. VGG16 Transfer Learning Model
+The VGG16 Transfer Learning model utilizes a pre-trained VGG16 model, fine-tuned to classify gastric cancer images. Transfer learning allows us to leverage learned features from a large dataset, significantly improving performance, especially when limited data is available.
 
-To set up the environment and dependencies:
+- **Architecture**: VGG16 base with additional fully connected layers for the specific task.
+- **Purpose**: To leverage the advantages of transfer learning in medical imaging and compare it with other CNN models developed from scratch.
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/gastric-cancer-detection.git
-   cd gastric-cancer-detection
+
+
+
+## Getting Started
+
+
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/Gastric_cancer_classification-Model.git
+    ```
+2. Navigate into the project directory and install dependencies:
+    ```bash
+    cd Gastric_cancer_classification-Model
+    pip install -r requirements.txt
+    ```
+
+### Training the Models
+1. Use the scripts provided in the project to train each model.
+2. The data should be preprocessed and split into training and validation sets before training.
+
+### Evaluation
+Each model is evaluated based on accuracy, precision, recall, F1-score, and confusion matrix. The evaluation graphs and confusion matrices above provide a comparative overview of each model’s performance.
+
+## Conclusion
+This project explores different CNN architectures and regularization techniques to enhance the early detection of gastric cancer from endoscopic images. The VGG16 transfer learning model, leveraging pre-trained features, is expected to outperform other models due to the advantages of transfer learning, especially in the medical imaging domain.
+
+## References
+- E. Klang, A. Sourosh, G. Nadkarni, K. Sharif, and A. Lahat, “Deep Learning and Gastric Cancer: Systematic Review of AI-Assisted Endoscopy.,” Diagnostics, vol. 13, no. 24, p. 3613, Dec. 2023.
+
+- M. Popa, M. Cruciera, and B. Diaconu, “SURVEY OF MACHINE LEARNING APPLICATIONS IN MEDICAL IMAGING. ALGORITHMS AND TECHNOLOGIES.,” Fiability & Durability / Fiabilitate si Durabilitate, no. 1, pp. 219–224, May 2023.
+
