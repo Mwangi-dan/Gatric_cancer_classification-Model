@@ -67,6 +67,7 @@ The CNN with L1 regularization model incorporates L1 penalties on the weights of
 - **Purpose**: To evaluate the effect of L1 regularization on model performance.
 
 ![CNN L1 Regularization Evaluation Graph](images/cnn_l1_evaluation_graph.png)
+- Confusion Matrix: L1 Model
 ![CNN L1 Regularization Confusion Matrix](images/regularization_confusion_matrix.png)
 
 ### 3. CNN Model with L2 Regularization
